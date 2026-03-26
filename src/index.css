@@ -4,28 +4,24 @@ html, body {
   overflow-x: hidden;
 }
 
-/* ✅ ADD THIS */
 #root {
   overflow-x: hidden;
   width: 100%;
-  max-width: 100%;
 }
 
+/* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Box sizing */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* ✅ ADD THIS */
-* {
-  max-width: 100%;
-}
-
+/* Base */
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -38,9 +34,9 @@ body {
   color: #1a1a2e;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden; /* ✅ extra safety */
 }
 
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
   line-height: 1.2;
@@ -49,8 +45,11 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   line-height: 1.8;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
+/* Links & buttons */
 a {
   text-decoration: none;
   transition: opacity 0.2s ease, color 0.2s ease;
@@ -60,30 +59,40 @@ button, a {
   cursor: pointer;
 }
 
-/* ✅ UPDATED */
+/* Images */
 img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
+/* Inputs */
 input, textarea, select {
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
   transition: border-color 0.2s ease;
+  max-width: 100%;
 }
 
+/* Sections FIX */
 section {
   position: relative;
-  width: 100%;           /* ✅ ADD */
-  overflow: hidden;      /* ✅ ADD */
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-/* Smooth transitions for interactive elements */
+/* Prevent overflow from any container */
+div {
+  max-width: 100%;
+}
+
+/* Smooth transitions */
 .transition-all {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Animations */
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(-6px); }
   to { opacity: 1; transform: translateY(0); }
@@ -93,7 +102,6 @@ section {
   animation: fade-in 0.3s ease-out;
 }
 
-/* ===== SCROLL ANIMATION UTILITIES ===== */
 @keyframes hero-entry {
   from { opacity: 0; transform: translateY(32px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -102,11 +110,6 @@ section {
 @keyframes hero-fade {
   from { opacity: 0; }
   to   { opacity: 1; }
-}
-
-@keyframes slide-in-left {
-  from { opacity: 0; transform: translateX(-24px); }
-  to   { opacity: 1; transform: translateX(0); }
 }
 
 .hero-animate-1 { animation: hero-entry 0.8s cubic-bezier(0.22,1,0.36,1) 0.1s both; }
