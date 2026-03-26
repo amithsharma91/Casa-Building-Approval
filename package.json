@@ -36,6 +36,7 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
     "typescript-eslint": "^8.35.1",
-    "unplugin-auto-import": "^0.17.6"
+    "unplugin-auto-import": "^0.17.6",
+    "ts-node": "^10.9.2"
   }
 }
