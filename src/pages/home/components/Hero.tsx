@@ -17,14 +17,14 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen w-full max-w-full flex items-center justify-center overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 hero-animate-fade">
         <img
           src="https://readdy.ai/api/search-image?query=elegant%20modern%20luxury%20residential%20building%20facade%20Hyderabad%20India%20gold%20and%20white%20architectural%20details%20clean%20contemporary%20design%20polished%20marble%20exterior%20premium%20real%20estate%20twilight%20dusk%20warm%20lighting%20professional%20corporate%20photography%20sharp%20detail%20wide%20angle&width=1440&height=900&seq=hero-casa-v2&orientation=landscape"
           alt="Casa Associates GHMC Building Permission Hyderabad - Premium Architecture"
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-cover object-top max-w-full"
         />
         <div
           className="absolute inset-0"
@@ -40,9 +40,9 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-36 lg:py-44">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 lg:py-40 overflow-hidden">
         <div className="max-w-2xl lg:max-w-3xl">
-          {/* Eyebrow */}
+          
           <div
             className="hero-animate-1 inline-flex items-center gap-3 mb-8 px-5 py-2.5 rounded-sm"
             style={{ background: "rgba(200,150,12,0.15)", border: "1px solid rgba(200,150,12,0.4)" }}
@@ -58,7 +58,6 @@ export default function Hero() {
             </span>
           </div>
 
-          {/* Main Heading H1 */}
           <h1
             className="hero-animate-2 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-5 leading-tight"
             style={{ fontFamily: '"Playfair Display", serif', lineHeight: "1.12" }}
@@ -68,7 +67,6 @@ export default function Hero() {
             <span style={{ color: "#C8960C" }}>Spaces to Reality</span>
           </h1>
 
-          {/* Tagline */}
           <p
             className="hero-animate-3 text-sm sm:text-base font-semibold tracking-widest uppercase mb-6"
             style={{ color: "rgba(200,150,12,0.85)", fontFamily: '"DM Sans", sans-serif', letterSpacing: "0.18em" }}
@@ -84,50 +82,43 @@ export default function Hero() {
             We handle TS-bPASS approvals, layout permissions, occupancy certificates, and TDR services — end to end, so you can focus on building.
           </p>
 
-          {/* CTA Buttons */}
           <div className="hero-animate-4 flex flex-col sm:flex-row gap-4 mb-16">
             <a
               href="https://wa.me/919980377877"
               target="_blank"
               rel="nofollow noreferrer"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-green-500 hover:bg-green-400 text-white font-semibold text-base rounded-sm transition-all duration-300 whitespace-nowrap cursor-pointer"
-              style={{ fontFamily: '"DM Sans", sans-serif' }}
+              className="inline-flex items-center justify-center gap-3 px-6 py-4 bg-green-500 hover:bg-green-400 text-white font-semibold text-base rounded-sm transition-all duration-300 whitespace-nowrap cursor-pointer"
             >
-              <span className="w-5 h-5 flex items-center justify-center">
-                <i className="ri-whatsapp-line text-lg"></i>
-              </span>
+              <i className="ri-whatsapp-line text-lg"></i>
               Chat on WhatsApp
             </a>
+
             <a
               href="#services"
               onClick={(e) => { e.preventDefault(); handleScroll("#services"); }}
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 font-semibold text-base rounded-sm transition-all duration-300 whitespace-nowrap cursor-pointer hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-3 px-6 py-4 font-semibold text-base rounded-sm transition-all duration-300 whitespace-nowrap cursor-pointer hover:bg-white/10"
               style={{
-                fontFamily: '"DM Sans", sans-serif',
                 border: "1px solid rgba(200,150,12,0.6)",
                 color: "#C8960C",
               }}
             >
-              <span className="w-5 h-5 flex items-center justify-center">
-                <i className="ri-grid-line text-lg"></i>
-              </span>
+              <i className="ri-grid-line text-lg"></i>
               Our Services
             </a>
           </div>
 
-          {/* Stats */}
           <div
             ref={statsRef}
-            className="pt-8 border-t flex flex-wrap gap-y-6"
+            className="pt-8 border-t flex flex-wrap gap-y-6 overflow-hidden"
             style={{ borderColor: "rgba(200,150,12,0.25)" }}
           >
             {stats.map((stat, i) => (
               <div
                 key={stat.label}
-                className="pr-10 sm:pr-14"
+                className="pr-8 sm:pr-12"
                 style={{
                   borderRight: i < stats.length - 1 ? "1px solid rgba(200,150,12,0.25)" : "none",
-                  marginRight: i < stats.length - 1 ? "2.5rem" : "0",
+                  marginRight: i < stats.length - 1 ? "2rem" : "0",
                   ...animStyles(statsInView, 0.7 + i * 0.1),
                 }}
               >
@@ -139,21 +130,19 @@ export default function Hero() {
                 </div>
                 <div
                   className="text-sm text-white/60 mt-2 font-medium"
-                  style={{ fontFamily: '"DM Sans", sans-serif' }}
                 >
                   {stat.label}
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <button
         onClick={() => handleScroll("#about")}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 cursor-pointer hero-animate-5"
-        aria-label="Scroll down"
       >
         <div
           className="w-8 h-12 rounded-full border-2 flex items-start justify-center pt-2"
