@@ -1,20 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset */
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
 
+/* Root */
 #root {
-  overflow-x: hidden;
   width: 100%;
+  overflow-x: hidden;
 }
-
-/* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 /* Box sizing */
 *, *::before, *::after {
@@ -74,7 +75,7 @@ input, textarea, select {
   max-width: 100%;
 }
 
-/* Sections FIX */
+/* Sections */
 section {
   position: relative;
   width: 100%;
@@ -82,7 +83,7 @@ section {
   overflow-x: hidden;
 }
 
-/* Prevent overflow from any container */
+/* Prevent unwanted overflow */
 div {
   max-width: 100%;
 }
