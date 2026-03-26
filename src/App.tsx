@@ -6,16 +6,18 @@ import i18n from "./i18n";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
+
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [pathname]);
+
   return null;
 }
 
 function App() {
   return (
     <I18nextProvider i18n={i18n}>
-      <BrowserRouter basename={__BASE_PATH__}>
+      <BrowserRouter>
         <ScrollToTop />
         <AppRoutes />
       </BrowserRouter>
